@@ -1,6 +1,6 @@
 # Data Analysis Homework
 
-## For Collaborators (Nand)
+## For Collaborators
 
 Follow this guide to contribute to the repo without breaking anything.
 
