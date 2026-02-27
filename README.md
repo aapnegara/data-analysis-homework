@@ -1,8 +1,20 @@
 # Data Analysis Homework
 
-## For Collaborators
+**Authors:** A. Agung Prawira Negara & Nand Van Deun
 
-Follow this guide to contribute to the repo without breaking anything.
+Repository for data analysis assignments in physics and astronomy.
+
+---
+
+## Branch Structure
+
+```
+main              ← stable, final version only
+├── branch-agung  ← Agung's working branch
+└── branch-nand   ← Nand's working branch
+```
+
+> ⚠️ Never work directly on `main`!
 
 ---
 
@@ -20,6 +32,15 @@ git config --global user.email "your-github-email@example.com"
 git config --global user.name "Your Name"
 ```
 
+Create your branch:
+```bash
+# Agung
+git checkout -b branch-agung
+
+# Nand
+git checkout -b branch-nand
+```
+
 ---
 
 ## Workflow: Every Time You Work
@@ -28,21 +49,20 @@ git config --global user.name "Your Name"
 ```bash
 git checkout main
 git pull origin main
+git checkout branch-yourname
+git merge main
 ```
 
-### 2. Create your own branch before editing anything
-```bash
-git checkout -b branch-nand
-```
-> ⚠️⚠️⚠️ Never edit directly on `main`!
+### 2. Do your edits on the notebook, then save it
 
-### 3. Do your edits on the notebook, then save it
+### 3. Clear notebook outputs before committing
+In Jupyter: **Kernel → Restart & Clear Output**, then save.
 
 ### 4. Stage, commit, and push your work
 ```bash
 git add .
 git commit -m "describe what you changed"
-git push origin branch-nand
+git push origin branch-yourname
 ```
 
 ### 5. Open a Pull Request on GitHub
@@ -50,8 +70,15 @@ git push origin branch-nand
 - Click **Compare & pull request**
 - Write a short description of your changes
 - Click **Create pull request**
+- Notify your partner to review and merge it
 
-Then wait, I will review and merge it into main.
+### 6. After your PR is merged, sync up
+```bash
+git checkout main
+git pull origin main
+git checkout branch-yourname
+git merge main
+```
 
 ---
 
@@ -59,17 +86,20 @@ Then wait, I will review and merge it into main.
 
 | Action | Command |
 |---|---|
+| Check current branch | `git branch` |
 | Check status | `git status` |
-| See your branch | `git branch` |
 | Switch branch | `git checkout branch-name` |
 | Pull latest main | `git pull origin main` |
+| Merge main into your branch | `git merge main` |
 | Stage all files | `git add .` |
 | Commit | `git commit -m "message"` |
-| Push | `git push origin branch-nand` |
+| Push | `git push origin branch-yourname` |
 
 ---
 
 ## Rules
-- Always work on `branch-nand`, not `main`
-- Clear notebook outputs before committing (**Kernel → Restart & Clear Output**)
-- Write clear commit messages so both of us can track and knows what is changed
+- Each person works on their own branch (`branch-agung` or `branch-nand`)
+- Never push directly to `main` — always go through a Pull Request
+- Clear notebook outputs before committing
+- Write clear commit messages so both of us can track what changed
+- After a PR is merged, always sync your local branch with the updated main
