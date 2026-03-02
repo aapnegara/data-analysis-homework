@@ -82,6 +82,36 @@ git merge main
 
 ---
 
+## ⚠️ If You Get a Conflict
+
+This can happen when both of us edit the same file at the same time without knowing. Don't panic!
+
+When you run `git pull origin main` and see:
+```
+CONFLICT (content): Merge conflict in notebook.ipynb
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+You have two choices:
+
+**Keep your local version:**
+```bash
+git checkout --ours HomeworkAssignment1_AAgungPrawiraNegara_NandVanDeun.ipynb
+git add HomeworkAssignment1_AAgungPrawiraNegara_NandVanDeun.ipynb
+git commit -m "resolve conflict, keep my version"
+```
+
+**Keep the GitHub (partner's) version:**
+```bash
+git checkout --theirs HomeworkAssignment1_AAgungPrawiraNegara_NandVanDeun.ipynb
+git add HomeworkAssignment1_AAgungPrawiraNegara_NandVanDeun.ipynb
+git commit -m "resolve conflict, keep partner's version"
+```
+
+> 💬 **Best practice: always communicate first!** Before starting work, let your partner know what you're working on so you don't edit the same cells at the same time.
+
+---
+
 ## Quick Reference
 
 | Action | Command |
